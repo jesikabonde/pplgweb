@@ -26,13 +26,13 @@
       padding: 40px 20px 80px;
     }
 
-    /* animasi bokeh */
     .floating-lights span {
       position: absolute; width: 20px; height: 20px;
       background: rgba(255, 255, 255, 0.25);
       border-radius: 50%;
       animation: float 6s infinite ease-in-out;
     }
+
     @keyframes float {
       0% { transform: translateY(0); opacity: 0.5; }
       50% { transform: translateY(-50px); opacity: 1; }
@@ -58,6 +58,7 @@
       border-radius: 25px; font-size: 1.1rem; cursor: pointer;
       transition: 0.3s; box-shadow: 0 0 20px rgba(100,181,246,0.5);
     }
+
     .slide1 button:hover {
       background: linear-gradient(90deg, #42a5f5, #7e57c2);
       transform: scale(1.08); box-shadow: 0 0 25px rgba(255,255,255,0.8);
@@ -69,9 +70,14 @@
     .floating-lights span:nth-child(4) { top: 80%; left: 70%; animation-delay: 3s; }
     .floating-lights span:nth-child(5) { top: 30%; left: 50%; animation-delay: 4s; }
 
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
     /* ===== SLIDE 2 ===== */
     .slide2 {
       min-height: 100vh;
+      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
       display: none;
       flex-direction: column;
       align-items: center;
@@ -79,16 +85,8 @@
       color: #333;
       position: relative;
       overflow: hidden;
-
-      /* 🌸 tambahan background cantik */
-      background: linear-gradient(135deg, rgba(224,247,250,0.9), rgba(225,190,231,0.9)), 
-                  url('xi.pplg2_files/bg-pplg.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
     }
 
-    /* efek titik-titik lembut */
     .slide2::before, .slide2::after {
       content: '';
       position: absolute;
@@ -105,14 +103,279 @@
 
     .slide2 h2 { font-size: 2.5rem; color: #3949ab; margin-bottom: 20px; text-align: center; }
 
-    /* ...lanjutan CSS kamu tetap sama ... */
+    .info-card {
+      background: linear-gradient(145deg, #ffffff, #dcedf7);
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      max-width: 900px;
+      padding: 40px 50px;
+      margin-bottom: 60px;
+      text-align: justify;
+      opacity: 0; transform: translateY(50px) scale(0.95);
+      transition: all 0.9s ease;
+    }
+    .info-card.active { opacity: 1; transform: translateY(0) scale(1); }
+
+    /* Struktur Kelas */
+    .struktur {
+      background: linear-gradient(145deg, #f3e5f5, #ffffff);
+      border-radius: 25px;
+      padding: 50px;
+      margin-bottom: 60px;
+      max-width: 1000px;
+      width: 100%;
+      opacity: 0; transform: translateY(50px) scale(0.95);
+      transition: all 0.9s ease;
+    }
+    .struktur.active { opacity: 1; transform: translateY(0) scale(1); }
+
+    .struktur h3 { text-align: center; color: #1976d2; margin-bottom: 30px; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; }
+    .struktur-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; justify-items: center; }
+
+    .struktur-card {
+      background: linear-gradient(145deg, #d1c4e9, #ffffff);
+      border-radius: 25px;
+      padding: 20px 15px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: all 0.4s ease;
+      width: 220px;
+    }
+    .struktur-card:hover {
+      transform: translateY(-15px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(25,118,210,0.35);
+    }
+    .struktur-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      border: 3px solid #9575cd;
+    }
+    .struktur-card h4 { font-size: 1.2rem; font-weight: 600; color: #1e88e5; margin-bottom: 5px; }
+    .struktur-card p { font-size: 1rem; color: #555; }
+
+    /* Mini gallery anggota */
+    .mini-gallery {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto 60px;
+      text-align: center;
+      opacity: 0; transform: translateY(30px) scale(0.95);
+      transition: all 0.9s ease;
+    }
+    .mini-gallery.active { opacity: 1; transform: translateY(0) scale(1); }
+    .mini-gallery h3 {
+      font-size: 1.6rem;
+      color: #3949ab;
+      margin-bottom: 25px;
+    }
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .mini-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      width: 120px;
+    }
+    .mini-card:hover { transform: translateY(-10px) scale(1.05); box-shadow:0 10px 25px rgba(25,118,210,0.25); }
+    .mini-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-bottom: 2px solid #9575cd;
+    }
+    .mini-card p {
+      font-size: 0.85rem;
+      padding: 5px 0;
+      color: #555;
+      font-weight: 500;
+    }
+
+    /* Galeri utama */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      width: 90%;
+      margin-bottom: 60px;
+      opacity: 0; transform: translateY(50px) scale(0.95);
+      transition: all 0.9s ease;
+    }
+    .gallery.active { opacity: 1; transform: translateY(0) scale(1); }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 25px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 25px;
+      transition: all 0.4s ease;
+    }
+    .card:hover img { transform: scale(1.08); }
+    .card p {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      background: rgba(25,118,210,0.75);
+      color: white;
+      padding: 10px 0;
+      font-size: 1rem;
+      border-radius: 0 0 25px 25px;
+      font-weight: 600;
+    }
+
+    /* Back button */
+    .back-btn {
+      position: absolute;
+      top: 25px; right: 25px;
+      background: linear-gradient(90deg, #4fc3f7, #9575cd);
+      color: white; border: none;
+      padding: 12px 28px;
+      border-radius: 25px; font-size: 1rem; cursor: pointer;
+      transition: 0.3s;
+    }
+    .back-btn:hover { transform: scale(1.1); background: linear-gradient(90deg, #42a5f5, #7e57c2); }
+
+    footer { text-align: center; font-size: 0.9rem; color: #555; margin-top: 40px; }
+
+    @media (max-width: 600px) {
+      .slide1 h1 { font-size: 2rem; }
+      .slide1 p { font-size: 0.9rem; }
+      .struktur-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+      .struktur-card img { height: 220px; }
+      .mini-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+      .mini-card img { height: 100px; }
+    }
   </style>
 </head>
 <body>
 
-<!-- SLIDE 1 dan SLIDE 2 kamu tetap sama seperti sebelumnya -->
-<!-- tidak perlu ubah bagian bawahnya -->
-<!-- cukup tambahkan gambar bg di folder xi.pplg2_files/bg-pplg.jpg -->
+  <!-- SLIDE 1 -->
+  <section class="slide1">
+    <div class="floating-lights"><span></span><span></span><span></span><span></span><span></span></div>
+    <h1>KELAS XI.PPLG 2</h1>
+    <p>Selamat datang di dunia kami — <strong>PPLG</strong>.<br>
+    Jurusan di mana ide, logika, dan kreativitas berpadu jadi karya nyata.<br>
+    Di balik setiap baris kode, ada semangat, kebersamaan, dan tawa yang tak tergantikan.</p>
+    <button onclick="showSlide2()">Jelajahi Cerita Kami</button>
+  </section>
 
+ <!-- SLIDE 2 -->
+<section class="slide2" id="slide2">
+  <button class="back-btn" onclick="showSlide1()">← Kembali</button>
+
+  <div class="info-card">
+    <h2>Tentang Jurusan PPLG</h2>
+    <p>PPLG (Pengembangan Perangkat Lunak dan Gim) adalah jurusan yang menggabungkan kreativitas dan logika. 
+    Kami belajar membuat aplikasi, desain antarmuka, serta memahami teknologi digital dari sisi kreatif maupun teknis. 
+    Setiap siswa diajak berpikir kritis, berkolaborasi, dan berkarya dengan semangat tinggi. 
+    Di sini, setiap proyek bukan hanya kode, tetapi kisah kebersamaan dan inovasi.</p>
+  </div>
+
+  <div class="struktur">
+  <h3>Struktur Kelas XI PPLG 2</h3>
+  <div class="struktur-grid">
+    
+    <!-- Wali Kelas -->
+    <a href=https://www.instagram.com/sepriatihamani?igsh=MzZ1dHdlY3pzamh6 target="_blank" class="struktur-card">
+      <img src="xi.pplg2_files/mamevhy.jpg" alt="Wali Kelas">
+      <h4>SEPRIATI HAMANI</h4>
+      <p><strong>WALI KELAS</strong></p>
+    </a>
+
+    <!-- Ketua Kelas -->
+    <a href="https://www.instagram.com/jska.bnde?igsh=MWNla3doNGY0bnh2eA==" target="_blank" class="struktur-card">
+      <img src="xi.pplg2_files/jes.jpg" alt="Ketua Kelas">
+      <h4>JESIKA BONDE</h4>
+      <p><strong>KETUA KELAS</strong></p>
+    </a>
+
+    <!-- Wakil Ketua -->
+    <a href="https://www.instagram.com/mr.lionheart123?igsh=bjZzY3kydThwc3dm" target="_blank" class="struktur-card">
+      <img src="xi.pplg2_files/waket.jpg" alt="Wakil Ketua">
+      <h4>MARS TAIRAS</h4>
+      <p><strong>WAKIL KETUA</strong></p>
+    </a>
+
+    <!-- Sekretaris -->
+    <a href="https://www.instagram.com/kyegi_55?igsh=cW14b2sxazJqYmlz" target="_blank" class="struktur-card">
+      <img src="xi.pplg2_files/sek.jpg" alt="Sekretaris">
+      <h4>KEYSIA LEGI</h4>
+      <p><strong>SEKRETARIS</strong></p>
+    </a>
+
+    <!-- Bendahara -->
+    <a href="https://www.instagram.com/daelovv?igsh=Nm1tcjlzNXhwNmRu" target="_blank" class="struktur-card">
+      <img src="xi.pplg2_files/ben.jpg" alt="Bendahara">
+      <h4>DEALOVA SUYUDI</h4>
+      <p><strong>BENDAHARA</strong></p>
+    </a>
+
+  </div>
+</div>
+
+
+
+  <!-- Mini Gallery Anggota -->
+  <div class="mini-gallery">
+    <h3>Anggota Lainnya</h3>
+    <div class="mini-grid">
+      <div class="mini-card"><img src="xi.pplg2_files/nux.jpg" alt="Anggota 1"><p>Anugerah Suak</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota2.jpg" alt="Anggota 2"><p>Brenetrya Lasano</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota3.jpg" alt="Anggota 3"><p>Daniel Banjele</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota4.jpg" alt="Anggota 4"><p>Dimitry Malonda</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota5.jpg" alt="Anggota 5"><p>Filmansyah Ishak</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota6.jpg" alt="Anggota 6"><p>Fitri Nurmidin</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota7.jpg" alt="Anggota 7"><p>Flinsyah Inaray</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota8.jpg" alt="Anggota 8"><p>Frisilia Ering</p></div>
+      <div class="mini-card"><img src="xi.pplg2_files/anggota9.jpg" alt="Anggota 9"><p>Gilchrist Zakawerus</p></div>
+      <!-- Tambahkan anggota lain di sini -->
+    </div>
+  </div>
+
+  <footer>🌤️ Dibuat oleh <strong>Jesika Bonde</strong> | XI PPLG 2 🌤️</footer>
+</section>
+
+
+  <script>
+    function showSlide2() {
+      document.querySelector('.slide1').style.display = 'none';
+      document.getElementById('slide2').style.display = 'flex';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      fadeInElements();
+    }
+
+    function showSlide1() {
+      document.querySelector('.slide1').style.display = 'flex';
+      document.getElementById('slide2').style.display = 'none';
+    }
+
+    function fadeInElements() {
+      const info = document.querySelector('.info-card');
+      const struktur = document.querySelector('.struktur');
+      const miniGallery = document.querySelector('.mini-gallery');
+      const gallery = document.querySelector('.gallery');
+      setTimeout(() => { info.classList.add('active'); }, 300);
+      setTimeout(() => { struktur.classList.add('active'); }, 600);
+      setTimeout(() => { miniGallery.classList.add('active'); }, 900);
+      setTimeout(() => { gallery.classList.add('active'); }, 1200);
+    }
+  </script>
 </body>
 </html>
