@@ -1,71 +1,205 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PPLG Leveling — Beranda</title>
-  <meta name="description" content="Situs resmi jurusan PPLG — proyek, kurikulum, dan kegiatan siswa.">
+  <meta name="description" content="Situs resmi jurusan PPLG — proyek, kurikulum, dan kegiatan siswa." />
+
   <style>
-    :root{
-      --bg:#f8fafc; --card:#fff; --muted:#6b7280; --accent:#4f46e5; --radius:14px;
+    :root {
+      --bg: #f8fafc;
+      --card: #fff;
+      --muted: #6b7280;
+      --accent: #4f46e5;
+      --radius: 14px;
     }
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;margin:0;background:linear-gradient(180deg,var(--bg),#ffffff);color:#0f172a}
-    .container{max-width:1100px;margin:32px auto;padding:0 20px}
 
-    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
-    nav a{margin-left:18px;text-decoration:none;color:var(--muted);font-weight:600}
-    nav a.btn{background:var(--accent);color:white;padding:8px 14px;border-radius:10px}
+    * { box-sizing: border-box; }
 
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:16px}
-    .hero h1{font-size:36px;margin:0 0 12px 0}
-    .hero p{color:var(--muted);line-height:1.6}
-    .cta{margin-top:18px}
-    .btn-ghost{padding:10px 14px;border-radius:10px;border:1px solid #e6e9ee;background:white;margin-right:10px}
-    .btn-primary{padding:10px 14px;border-radius:10px;background:var(--accent);color:white;border:none}
+    body {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+      margin: 0;
+      background: linear-gradient(180deg, var(--bg), #ffffff);
+      color: #0f172a;
+    }
 
-    .stats{display:flex;gap:12px;margin-top:18px}
-    .stat{background:var(--card);padding:12px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.05);min-width:120px}
-    .stat strong{display:block;font-size:20px}
-    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.05)}
+    .container {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
 
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+    /* Header */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
 
-    section{margin-top:28px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .feature{padding:16px;border-radius:12px;background:var(--card)}
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
 
-    footer{margin:40px 0 80px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;align-items:center}
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #06b6d4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+    }
 
-    /* responsive */
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr}}
-    @media (max-width:520px){.gallery img{height:120px}.brand h1{font-size:16px}nav{display:none}}
+    nav a {
+      margin-left: 18px;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+    }
 
-    /* simple video card */
-    .video-wrap{border-radius:12px;overflow:hidden}
-    .video-wrap video{width:100%;height:auto;display:block}
-  .team-slider{position:relative;display:flex;align-items:center;justify-content:center;margin-top:16px}
-.slide-track{width:100%;max-width:760px;overflow:hidden}
-.team-card{display:flex;gap:20px;background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(15,23,42,0.05);align-items:center}
-.team-img{width:160px;height:160px;border-radius:16px;object-fit:cover}
-.team-info h4{margin:0;font-size:20px}
-.team-info .quote{margin:6px 0;color:var(--muted)}
-.slide-btn{width:42px;height:42px;border-radius:50%;border:1px solid #333;background:transparent;color:white;font-size:20px;cursor:pointer;margin:0 12px}
-</style>
+    nav a.btn {
+      background: var(--accent);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 10px;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 28px;
+      align-items: center;
+      margin-top: 16px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin: 0 0 12px 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .cta {
+      margin-top: 18px;
+    }
+
+    .btn-ghost {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #e6e9ee;
+      background: white;
+      margin-right: 10px;
+    }
+
+    .btn-primary {
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--accent);
+      color: white;
+      border: none;
+    }
+
+    /* Features */
+    section {
+      margin-top: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .feature {
+      padding: 16px;
+      border-radius: 12px;
+      background: var(--card);
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+    }
+
+    /* Footer */
+    footer {
+      margin: 40px 0 80px;
+      color: var(--muted);
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gallery img {
+        height: 120px;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
+
+    <!-- Header -->
     <header>
       <div class="brand">
         <div class="logo">P</div>
         <div>
-          <div style="font-weight:700">PPLG Leveling</div>
-          <div style="font-size:13px;color:var(--muted)">Pengembangan Perangkat Lunak & Gim</div>
+          <div style="font-weight: 700">PPLG Leveling</div>
+          <div style="font-size: 13px; color: var(--muted)">Pengembangan Perangkat Lunak & Gim</div>
         </div>
       </div>
+
       <nav>
         <a href="#features">Fitur</a>
         <a href="#kurikulum">Kurikulum</a>
@@ -74,137 +208,89 @@
       </nav>
     </header>
 
+    <!-- Hero -->
     <main>
       <section class="hero">
         <div>
           <h1>Bangun skill wartawan digital & pengembang perangkat lunak</h1>
-          <p>Menggabungkan pembelajaran praktis dan proyek nyata agar siswa PPLG siap kerja — dari web dev, jaringan, sampai IoT dan gim sederhana.</p>
+          <p>
+            Menggabungkan pembelajaran praktis dan proyek nyata agar siswa PPLG siap kerja — dari web dev,
+            jaringan, sampai IoT dan gim sederhana.
+          </p>
 
           <div class="cta">
             <button class="btn-primary">Lihat Proyek</button>
             <button class="btn-ghost">Kurikulum</button>
           </div>
-
-          <div class="stats">
-            <div class="stat"><strong>120+</strong><span style="color:var(--muted)">Alumni</span></div>
-            <div class="stat"><strong>30+</strong><span style="color:var(--muted)">Proyek / Tahun</span></div>
-            <div class="stat"><strong>10</strong><span style="color:var(--muted)">Guru & Mentor</span></div>
-          </div>
         </div>
-
-        <aside>
-          <div class="card video-wrap">
-            <!-- Video lokal yang kamu upload (path lokal disertakan sesuai permintaan) -->
-            <video controls src="/mnt/data/2025-11-24 05-52-29.mkv" poster="" preload="metadata">Your browser does not support the video tag.</video>
-          </div>
-
-          <div style="display:flex;gap:10px;margin-top:12px">
-            <div class="card" style="flex:1">
-              <h4 style="margin:0 0 8px 0">Lab & Fasilitas</h4>
-              <p style="margin:0;color:var(--muted);font-size:14px">Komputer, router, dan peralatan IoT untuk proyek siswa.</p>
-            </div>
-            <div class="card" style="width:120px;text-align:center">
-              <div style="font-size:20px;font-weight:700">85%</div>
-              <div style="color:var(--muted);font-size:13px">Siswa lulus tepat waktu</div>
-            </div>
-          </div>
-        </aside>
       </section>
 
+      <!-- Features -->
       <section id="features">
         <h3>Bidang Pembelajaran</h3>
-        <div class="grid-3" style="margin-top:12px">
+
+        <div class="grid-3" style="margin-top: 12px">
           <div class="feature">
             <h4>Pengembangan Web</h4>
-            <p style="color:var(--muted);font-size:14px;margin-top:6px">HTML, CSS, JavaScript, dan framework modern untuk membuat aplikasi.</p>
+            <p style="color: var(--muted); font-size: 14px;">HTML, CSS, JavaScript, dan framework modern untuk membuat aplikasi.</p>
           </div>
+
           <div class="feature">
             <h4>Sistem & Jaringan</h4>
-            <p style="color:var(--muted);font-size:14px;margin-top:6px">Konfigurasi server, routing, dan keamanan jaringan dasar.</p>
+            <p style="color: var(--muted); font-size: 14px;">Konfigurasi server, routing, dan keamanan jaringan dasar.</p>
           </div>
+
           <div class="feature">
             <h4>Proyek IoT</h4>
-            <p style="color:var(--muted);font-size:14px;margin-top:6px">Presensi otomatis, sensor, dan prototyping perangkat keras.</p>
+            <p style="color: var(--muted); font-size: 14px;">Presensi otomatis, sensor, dan prototyping perangkat keras.</p>
           </div>
         </div>
       </section>
 
+      <!-- Gallery -->
       <section id="proyek">
-        <h3 style="margin-top:18px">Galeri Proyek</h3>
+        <h3 style="margin-top: 18px;">Galeri Proyek</h3>
+
         <div class="gallery">
-          <img src="/assets/project-1.jpg" alt="Proyek 1">
-          <img src="/assets/project-2.jpg" alt="Proyek 2">
-          <img src="/assets/project-3.jpg" alt="Proyek 3">
+          <img src="/assets/project-1.jpg" alt="Proyek 1" />
+          <img src="/assets/project-2.jpg" alt="Proyek 2" />
+          <img src="/assets/project-3.jpg" alt="Proyek 3" />
         </div>
       </section>
 
+      <!-- Curriculum -->
       <section id="kurikulum">
-        <h3 style="margin-top:18px">Kurikulum Inti</h3>
-        <div style="display:flex;gap:12px;margin-top:10px">
-          <div class="card" style="flex:1">
+        <h3 style="margin-top: 18px;">Kurikulum Inti</h3>
+
+        <div style="display: flex; gap: 12px; margin-top: 10px">
+          <div class="card" style="flex: 1">
             <h4>Dasar Pemrograman</h4>
-            <p style="color:var(--muted)">Algoritma, struktur data, dan logika pemrograman.</p>
+            <p style="color: var(--muted);">Algoritma, struktur data, dan logika pemrograman.</p>
           </div>
-          <div class="card" style="flex:1">
+
+          <div class="card" style="flex: 1">
             <h4>Pengembangan Aplikasi</h4>
-            <p style="color:var(--muted)">Front-end & back-end untuk kebutuhan industri.</p>
+            <p style="color: var(--muted);">Front-end & back-end untuk kebutuhan industri.</p>
           </div>
-          <div class="card" style="flex:1">
+
+          <div class="card" style="flex: 1">
             <h4>Manajemen Proyek</h4>
-            <p style="color:var(--muted)">Version control, agile, dan dokumentasi.</p>
+            <p style="color: var(--muted);">Version control, agile, dan dokumentasi.</p>
           </div>
         </div>
       </section>
+    </main>
 
-      <section id="kontak">
-        <h3 style="margin-top:18px">Hubungi Kami</h3>
-        <div style="display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:12px">
-          <form class="card">
-            <label style="display:block;margin-bottom:6px;font-weight:600">Nama</label>
-            <input style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee;margin-bottom:8px" placeholder="Nama lengkap">
-            <label style="display:block;margin-bottom:6px;font-weight:600">Email</label>
-            <input style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee;margin-bottom:8px" placeholder="email@contoh.com">
-            <label style="display:block;margin-bottom:6px;font-weight:600">Pesan</label>
-            <textarea style="width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee" rows="5" placeholder="Tanyakan tentang magang, kurikulum, atau proyek."></textarea>
-            <div style="margin-top:10px"><button class="btn-primary" type="button">Kirim Pesan</button></div>
-          </form>
-
-          <div class="card">
-            <h4>Alamat & Kontak</h4>
-            <p style="color:var(--muted);margin-top:6px">Jl. Contoh No.1 — Lab PPLG<br>Telp: (0431) 123-456</p>
-            <p style="color:var(--muted);margin-top:8px">Jam: Sen–Jum 08.00–15.00</p>
-          </div>
-        </div>
-      </section>
-
-    <section id="team" style="margin-top:28px">
-  <h3>Team Kami</h3>
-  <div class="team-slider">
-    <button class="slide-btn prev">&#10094;</button>
-    <div class="slide-track">
-      <div class="team-card">
-        <img src="/assets/team-1.jpg" class="team-img" alt="Team 1">
-        <div class="team-info">
-          <h4>Nama Anggota</h4>
-          <p class="quote">“Stay hungry, stay foolish.” – Steve Jobs</p>
-          <span class="status">• Active Member</span>
-        </div>
-      </div>
-    </div>
-    <button class="slide-btn next">&#10095;</button>
-  </div>
-</section>
-
-</main>
-
+    <!-- Footer -->
     <footer>
       <div>© <span id="year"></span> PPLG Leveling</div>
-      <div style="opacity:.8">Situs contoh untuk presentasi & portofolio</div>
+      <div style="opacity: .8;">Situs contoh untuk presentasi & portofolio</div>
     </footer>
+
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
