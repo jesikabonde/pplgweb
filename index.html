@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kelas XI PPLG 2 - Cerita Kami</title>
   <style>
-
-    
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { overflow-x: hidden; background-color: #fdfdfd; scroll-behavior: smooth; }
+    body { overflow-x: hidden; background-color: #f8f9fa; scroll-behavior: smooth; }
 
     /* ===== SLIDE 1 ===== */
     .slide1 {
       height: 100vh;
       position: relative;
-      background-image: linear-gradient(to bottom right, rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('xi.pplg2_files/kebersamaan.jpg');
+      background-image: linear-gradient(to bottom right, rgba(0, 32, 96, 0.7), rgba(0, 20, 60, 0.9)), url('xi.pplg2_files/kebersamaan.jpg');
       background-size: cover;
       background-position: center;
       color: white;
@@ -30,7 +28,7 @@
 
     .floating-lights span {
       position: absolute; width: 20px; height: 20px;
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.3);
       border-radius: 50%;
       animation: float 6s infinite ease-in-out;
     }
@@ -43,7 +41,7 @@
 
     .slide1 h1 {
       font-size: 3rem; font-weight: 700;
-      background: linear-gradient(90deg, #80d8ff, #ffe57f);
+      background: linear-gradient(90deg, #ffffff, #b8d0ff);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       animation: fadeInDown 2s ease; margin-bottom: 15px;
     }
@@ -51,19 +49,21 @@
     .slide1 p {
       font-size: 1rem; max-width: 600px; margin-bottom: 25px;
       animation: fadeInUp 2s ease; line-height: 1.6;
-      background: rgba(0,0,0,0.35); padding: 12px 20px; border-radius: 15px; backdrop-filter: blur(5px);
+      background: rgba(0, 32, 96, 0.6); padding: 12px 20px; border-radius: 15px; backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .slide1 button {
-      background: linear-gradient(90deg, #4fc3f7, #9575cd);
+      background: linear-gradient(90deg, #002244, #003366);
       color: white; border: none; padding: 12px 35px;
       border-radius: 25px; font-size: 1.1rem; cursor: pointer;
-      transition: 0.3s; box-shadow: 0 0 20px rgba(100,181,246,0.5);
+      transition: 0.3s; box-shadow: 0 0 20px rgba(0, 50, 102, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .slide1 button:hover {
-      background: linear-gradient(90deg, #42a5f5, #7e57c2);
-      transform: scale(1.08); box-shadow: 0 0 25px rgba(255,255,255,0.8);
+      background: linear-gradient(90deg, #003366, #004488);
+      transform: scale(1.08); box-shadow: 0 0 25px rgba(255,255,255,0.4);
     }
 
     .floating-lights span:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
@@ -79,12 +79,12 @@
     /* ===== SLIDE 2 ===== */
     .slide2 {
       min-height: 100vh;
-      background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+      background: linear-gradient(135deg, #ffffff, #f0f4f8);
       display: none;
       flex-direction: column;
       align-items: center;
       padding: 70px 20px;
-      color: #333;
+      color: #002244;
       position: relative;
       overflow: hidden;
     }
@@ -95,7 +95,7 @@
       width: 200%;
       height: 200%;
       top: -50%; left: -50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background: radial-gradient(circle, rgba(0, 32, 96, 0.05) 1px, transparent 1px);
       background-size: 50px 50px;
       animation: rotate 90s linear infinite;
       pointer-events: none;
@@ -103,24 +103,25 @@
     .slide2::after { animation-direction: reverse; }
     @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-    .slide2 h2 { font-size: 2.5rem; color: #3949ab; margin-bottom: 20px; text-align: center; }
+    .slide2 h2 { font-size: 2.5rem; color: #002244; margin-bottom: 20px; text-align: center; }
 
     .info-card {
-      background: linear-gradient(145deg, #ffffff, #dcedf7);
+      background: linear-gradient(145deg, #ffffff, #f5f7fa);
       border-radius: 25px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       max-width: 900px;
       padding: 40px 50px;
       margin-bottom: 60px;
       text-align: justify;
       opacity: 0; transform: translateY(50px) scale(0.95);
       transition: all 0.9s ease;
+      border: 1px solid rgba(0, 32, 96, 0.1);
     }
     .info-card.active { opacity: 1; transform: translateY(0) scale(1); }
 
     /* Struktur Kelas */
     .struktur {
-      background: linear-gradient(145deg, #f3e5f5, #ffffff);
+      background: linear-gradient(145deg, #ffffff, #f0f4f8);
       border-radius: 25px;
       padding: 50px;
       margin-bottom: 60px;
@@ -128,24 +129,28 @@
       width: 100%;
       opacity: 0; transform: translateY(50px) scale(0.95);
       transition: all 0.9s ease;
+      border: 1px solid rgba(0, 32, 96, 0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
     .struktur.active { opacity: 1; transform: translateY(0) scale(1); }
 
-    .struktur h3 { text-align: center; color: #1976d2; margin-bottom: 30px; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; }
+    .struktur h3 { text-align: center; color: #002244; margin-bottom: 30px; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; }
     .struktur-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; justify-items: center; }
 
     .struktur-card {
-      background: linear-gradient(145deg, #d1c4e9, #ffffff);
+      background: linear-gradient(145deg, #ffffff, #e6ecf5);
       border-radius: 25px;
       padding: 20px 15px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
       transition: all 0.4s ease;
       width: 220px;
+      border: 1px solid rgba(0, 32, 96, 0.1);
     }
     .struktur-card:hover {
       transform: translateY(-15px) scale(1.05);
-      box-shadow: 0 15px 35px rgba(25,118,210,0.35);
+      box-shadow: 0 15px 35px rgba(0, 32, 96, 0.2);
+      border: 1px solid rgba(0, 32, 96, 0.2);
     }
     .struktur-card img {
       width: 100%;
@@ -153,10 +158,10 @@
       object-fit: cover;
       border-radius: 15px;
       margin-bottom: 15px;
-      border: 3px solid #9575cd;
+      border: 3px solid #003366;
     }
-    .struktur-card h4 { font-size: 1.2rem; font-weight: 600; color: #1e88e5; margin-bottom: 5px; }
-    .struktur-card p { font-size: 1rem; color: #555; }
+    .struktur-card h4 { font-size: 1.2rem; font-weight: 600; color: #002244; margin-bottom: 5px; }
+    .struktur-card p { font-size: 1rem; color: #003366; }
 
     /* Mini gallery anggota */
     .mini-gallery {
@@ -170,7 +175,7 @@
     .mini-gallery.active { opacity: 1; transform: translateY(0) scale(1); }
     .mini-gallery h3 {
       font-size: 1.6rem;
-      color: #3949ab;
+      color: #002244;
       margin-bottom: 25px;
     }
     .mini-grid {
@@ -182,22 +187,27 @@
     .mini-card {
       background: #fff;
       border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
       width: 120px;
+      border: 1px solid rgba(0, 32, 96, 0.1);
     }
-    .mini-card:hover { transform: translateY(-10px) scale(1.05); box-shadow:0 10px 25px rgba(25,118,210,0.25); }
+    .mini-card:hover { 
+      transform: translateY(-10px) scale(1.05); 
+      box-shadow: 0 10px 25px rgba(0, 32, 96, 0.15);
+      border: 1px solid rgba(0, 32, 96, 0.2);
+    }
     .mini-card img {
       width: 100%;
       height: 120px;
       object-fit: cover;
-      border-bottom: 2px solid #9575cd;
+      border-bottom: 2px solid #003366;
     }
     .mini-card p {
       font-size: 0.85rem;
       padding: 5px 0;
-      color: #555;
+      color: #002244;
       font-weight: 500;
     }
 
@@ -219,7 +229,8 @@
       border-radius: 25px;
       transition: transform 0.4s, box-shadow 0.4s;
       background: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0, 32, 96, 0.1);
     }
     .card img {
       width: 100%;
@@ -234,7 +245,7 @@
       bottom: 0;
       width: 100%;
       text-align: center;
-      background: rgba(25,118,210,0.75);
+      background: rgba(0, 32, 96, 0.85);
       color: white;
       padding: 10px 0;
       font-size: 1rem;
@@ -246,14 +257,10 @@
     .back-btn {
       position: absolute;
       top: 25px; right: 25px;
-      background: linear-gradient(90deg, #4fc3f7, #9575cd);
+      background: linear-gradient(90deg, #002244, #003366);
       color: white; border: none;
       padding: 12px 28px;
-      border-radius: 25px; font-size: 1rem; cursor: pointer;
-      transition: 0.3s;
     }
-    .back-btn:hover { transform: scale(1.1); background: linear-gradient(90deg, #42a5f5, #7e57c2); }
-
     footer { text-align: center; font-size: 0.9rem; color: #555; margin-top: 40px; }
 
     @media (max-width: 600px) {
@@ -281,31 +288,5 @@
  
   <footer>🌤️ Dibuat oleh <strong>Jesika Bonde</strong> | XI PPLG 2 🌤️</footer>
 </section>
-
-
-  <script>
-    function showSlide2() {
-      document.querySelector('.slide1').style.display = 'none';
-      document.getElementById('slide2').style.display = 'flex';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      fadeInElements();
-    }
-
-    function showSlide1() {
-      document.querySelector('.slide1').style.display = 'flex';
-      document.getElementById('slide2').style.display = 'none';
-    }
-
-    function fadeInElements() {
-      const info = document.querySelector('.info-card');
-      const struktur = document.querySelector('.struktur');
-      const miniGallery = document.querySelector('.mini-gallery');
-      const gallery = document.querySelector('.gallery');
-      setTimeout(() => { info.classList.add('active'); }, 300);
-      setTimeout(() => { struktur.classList.add('active'); }, 600);
-      setTimeout(() => { miniGallery.classList.add('active'); }, 900);
-      setTimeout(() => { gallery.classList.add('active'); }, 1200);
-    }
-  </script>
 </body>
 </html>
